@@ -31,14 +31,8 @@ public class PuffSmall extends Puff {
             CheckCollision.isCollision = true;
             PanelGame.getPlane().setHealth(PanelGame.getPlane().getHealth() - 1);
         }
-
-
-        g.setColor(new Color(0, 0, 0));
-        g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
-
-
-
-
+        //g.setColor(new Color(0, 0, 0));
+        //g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
     }
 
     @Override

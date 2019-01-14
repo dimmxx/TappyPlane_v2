@@ -28,10 +28,11 @@ public class PuffLarge extends Puff {
         g.drawImage(image[0], posX, posY, null);
         if(posX < 0 - 450) reInit();
         if(CheckCollision.checkCollision(this.hitBox)){
+            CheckCollision.isCollision = true;
             PanelGame.getPlane().setHealth(PanelGame.getPlane().getHealth() - 1);
         }
-        g.setColor(new Color(0, 0, 0));
-        g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
+        //g.setColor(new Color(0, 0, 0));
+        //g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
     }
 
     @Override

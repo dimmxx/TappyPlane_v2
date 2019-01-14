@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Explosion {
 
-    private int posX;
+    private int posX = PanelGame.getPlane().getPLANE_DISTANCE();
     private int posY;
     private int explosionImageIndex = 0;
     private Image[] image = new Image[9];
@@ -24,9 +24,8 @@ public class Explosion {
 
     public void drawItem(Graphics g) {
         if (CheckCollision.isCollision) {
-            posX = PanelGame.getPlane().getPlaneHitBox().x;
-            posY = PanelGame.getPlane().getPlaneHitBox().y;
-            g.drawImage(image[explosionImageIndex], posX, posY, null);
+            posY = PanelGame.getPlane().getPlaneHeight();
+            g.drawImage(image[explosionImageIndex], posX - 40, posY - 40, null);
             explosionImageIndex++;
             if(explosionImageIndex == 9) explosionImageIndex = 0;
         }

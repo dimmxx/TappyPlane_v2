@@ -41,8 +41,8 @@ public class Coin extends FlyingCore{
             reInit();
             PanelGame.getPlane().setScore();
         }
-        g.setColor(new Color(0, 0, 0));
-        g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
+        //g.setColor(new Color(0, 0, 0));
+        //g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
     }
 
     @Override

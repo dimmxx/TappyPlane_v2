@@ -39,7 +39,6 @@ public class PanelGame extends JPanel {
     private PuffLarge puffLarge1 = new PuffLarge();
     private Explosion explosion = new Explosion();
 
-
     public void paintComponent(Graphics g) {
 
         g.setColor(new Color(77, 86, 255));
@@ -48,22 +47,18 @@ public class PanelGame extends JPanel {
         if (plane.getHealth() > 0) {
 
             ground.drawGround(g, panelWidth);
-
             coin1.drawItem(g);
-
             plane.drawPlane(g, mousePressed);
             mousePressed = false;
-
             puffSmall1.drawItem(g);
             puffLarge1.drawItem(g);
-
             explosion.drawItem(g);
 
-            CheckCollision.isCollision =false;
+            CheckCollision.isCollision = false;
 
 
-
-            g.setColor(new Color(0, 255, 255));
+            g.setColor(new Color(41, 230, 255));
+            g.setFont(new Font("Times New Roman", Font.BOLD, 18));
             g.drawString("Health: " + plane.getHealth(), 650, 20);
             g.drawString("Score: " + plane.getScore() + "/1000", 650, 40);
 
@@ -81,10 +76,7 @@ public class PanelGame extends JPanel {
             g.setFont(new Font("Times New Roman", Font.BOLD, 40));
             g.drawString("You won!!! Game is over.", 200, 310);
         }
-
-
     }
-
 
     public static Plane getPlane() {
         return plane;

@@ -14,6 +14,8 @@ public class Plane {
     private java.awt.Rectangle planeHitBox;
     private Image image = null;
 
+    int explosionEffect = 5;
+
     public Plane(int planeHeight) {
         this.planeHeight = planeHeight;
         planeHitBox = new java.awt.Rectangle(PLANE_DISTANCE, planeHeight, 70, 43);
@@ -27,6 +29,14 @@ public class Plane {
 
     }
 
+
+    public int getPLANE_DISTANCE() {
+        return PLANE_DISTANCE;
+    }
+
+    public int getPlaneHeight() {
+        return planeHeight;
+    }
 
     public int getHealth() {
         return health;
@@ -66,12 +76,13 @@ public class Plane {
                     this.setPlaneHeight(30);
                 } else this.changePlaneHeight(-30);
             }
-        if (planeHeight > 615) this.setHealth(-100);
-        g.setColor(new Color(0, 0, 0));
-        g.drawRect(planeHitBox.x, planeHitBox.y, planeHitBox.width, planeHitBox.height);
+        if (planeHeight > 615) {
+            CheckCollision.isCollision = true;
+            this.setHealth(explosionEffect);
+            explosionEffect--;
+        }
+        //g.setColor(new Color(0, 0, 0));
+        //g.drawRect(planeHitBox.x, planeHitBox.y, planeHitBox.width, planeHitBox.height);
 
     }
-
-
-
 }
