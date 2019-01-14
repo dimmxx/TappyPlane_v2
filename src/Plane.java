@@ -22,6 +22,8 @@ public class Plane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        image = image.getScaledInstance(70, 50, Image.SCALE_SMOOTH);
+
 
     }
 
