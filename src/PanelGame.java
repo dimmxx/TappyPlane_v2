@@ -32,13 +32,12 @@ public class PanelGame extends JPanel {
         timer.start();
     }
 
-    //private int explosionImageIndex = 0;
-
     private static Plane plane = new Plane(RndEng.rndEng(30, 500));
     private Ground ground = new Ground();
     private Coin coin1 = new Coin();
     private PuffSmall puffSmall1 = new PuffSmall();
     private PuffLarge puffLarge1 = new PuffLarge();
+    private Explosion explosion = new Explosion();
 
 
     public void paintComponent(Graphics g) {
@@ -58,16 +57,11 @@ public class PanelGame extends JPanel {
             puffSmall1.drawItem(g);
             puffLarge1.drawItem(g);
 
+            explosion.drawItem(g);
+
+            CheckCollision.isCollision =false;
 
 
-
-//            if (checkCollision(puffLarge1) || checkCollision(puffSmall1) || checkCollision(puffSmall2)) {
-//                g.drawImage(plane.getExplosionImage(explosionImageIndex), plane.getPLANE_DISTANCE() - 25, plane.getPlaneHeight() - 35, null);
-//                explosionImageIndex++;
-//                if (explosionImageIndex == 9) explosionImageIndex = 0;
-//            }
-
-            //isCollision = false;
 
             g.setColor(new Color(0, 255, 255));
             g.drawString("Health: " + plane.getHealth(), 650, 20);
